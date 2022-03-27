@@ -1,38 +1,268 @@
 .App {
-  text-align: center;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: rgb(248, 205, 85);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.cidades {
+    display: flex;
+    flex-direction: column;
+    font-size: medium;
+    color: #393939;
+    cursor: pointer;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.cidades::selection {
+    color: none;
+    background: none;
+}
+
+#pais::selection {
+    color: none;
+    background: none;
+}
+#cidade::selection {
+    color: none;
+    background: none;
+}
+
+.cidade-menu {
+    display: flex;
+    display: none;
+}
+
+.pais-menu {
+    display: flex;
+    display: none;
+}
+
+.pais-menu-show {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 24px;
+    gap: 16px;
+    border-radius: 0px 0px 4px 4px;
+    width: 300px;
+    height: 300px;
+    background-color: rgba(255, 255, 255, 0.5);
+    background-blend-mode: hard-light;
+    overflow-y: scroll;
+}
+
+.cidade-menu {
+    display: flex;
+    display: none;
+}
+
+.cidade-menu-show {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 24px;
+    gap: 16px;
+    border-radius: 0px 0px 4px 4px;
+    width: 300px;
+    height: 300px;
+    background-color: rgba(255, 255, 255, 0.5);
+    background-blend-mode: hard-light;
+    overflow-y: scroll;
+}
+
+.inputCidadePais {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin: 48px;
+    gap: 18px;
+}
+.outputBG {
+    background-color: rgba(0, 0, 0, 0.8);
+    animation: scrollUp 400ms;
+    padding: 48px;
+}
+
+.outputCidadePais {
+    display: flex;
+    animation: scrollUp 400ms;
+    gap: 48px;
+}
+
+.outputName {
+    color: rgb(163, 163, 163);
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: small;
+    text-transform: uppercase;
+}
+
+.temp {
+    width: 150px;
+    font-size: 96px;
+    font-weight: 600;
+    color: #FFF;
+    cursor: default;
+}
+.temp::selection {
+    color: none;
+    background: none;
+}
+
+.city {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0px 96px;
+    gap: 4px;
+    font-size: 16px;
+    color: #FFF;
+}
+
+.extra {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 16px 0px;
+    gap: 4px;
+    font-size: 16px;
+    color: #FFF;
+}
+
+.extra-row{
+    display: flex;
+    width: 300px;
+    justify-content: space-between;
+}
+
+.extra-row #value{
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.paises-button {
+    display: flex;
+    background-color: #FFF;
+    background-blend-mode: soft-light;
+    width: 300px;
+    border-radius: 4px;
+    padding: 8px 24px 8px 24px;
+    cursor: pointer;
+    align-items: center;
+    min-height: 50px;
+}
+
+.paises-button-show {
+    display: flex;
+    background-color: #FFF;
+    background-blend-mode: soft-light;
+    width: 300px;
+    border-radius: 4px 4px 0px 0px;
+    padding: 8px 24px 8px 24px;
+    cursor: pointer;
+    align-items: center;
+    min-height: 50px;
+}
+
+.paises-full h1 {
+    font-size: medium;
+    width: 300px;
+    font-weight: 500;
+    color: #393939;
+}
+
+.cidade-button {
+    display: flex;
+    background-color: #FFF;
+    background-blend-mode: soft-light;
+    width: 300px;
+    border-radius: 4px;
+    padding: 8px 24px 8px 24px;
+    cursor: pointer;
+    align-items: center;
+    min-height: 50px;
+}
+
+.cidade-button-show {
+    display: flex;
+    background-color: #FFF;
+    background-blend-mode: soft-light;
+    width: 300px;
+    border-radius: 4px 4px 0px 0px;
+    padding: 8px 24px 8px 24px;
+    cursor: pointer;
+    align-items: center;
+    min-height: 50px;
+}
+
+.cidades-full h1 {
+    font-size: medium;
+    font-weight: 500;
+    color: #393939;
+    width: 300px;
+}
+
+.inputCidadePais button {
+    display: flex;
+    padding: 16px 36px;
+    border-radius: 4px;
+    border: 0;
+    font-size: medium;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: #FFF;
+    outline: none;
+    transition: 1s;
+}
+
+.inputCidadePais button:hover {
+    display: flex;
+    padding: 16px 36px;
+    border-radius: 4px;
+    border: 0;
+    font-size: medium;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: rgb(39, 39, 39);
+    color: #ffffff;
+    transition: 500ms;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: transparent; 
   }
-  to {
-    transform: rotate(360deg);
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
   }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+
+  @media (max-width: 850px) {
+    .inputCidadePais {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 48px;
+        gap: 18px;
+    }
+
+    .outputCidadePais {
+        flex-direction: column;
+        gap: 4px;
+    }
 }
